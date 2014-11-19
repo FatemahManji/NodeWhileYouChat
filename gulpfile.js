@@ -51,7 +51,7 @@ gulp.task('styles', function() {
 
   gulp.src('./src/assets/styles/index.sass')
     .pipe(sass())
-    .pipe(rename('main.css'))
+    .pipe(rename('global.css'))
     .pipe(gulp.dest('./public/assets/styles/'))
 
 });

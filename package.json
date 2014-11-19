@@ -1,9 +1,9 @@
 {
-  "name": "socket-boilerplate",
-  "description": "Socket Boilerplate Project",
+  "name": "NodeWhileYouChat",
+  "description": "Real-Time Chat",
   "version": "0.0.0",
-  "homepage": "http://darcyclarke.me",
-  "author": "Darcy Clarke",
+  "homepage": "http://fatemahmanji.com",
+  "author": "Fatemah Manji",
   "main": "server.js",
   "dependencies": {
     "express": "*",
@@ -17,6 +17,7 @@
     "gulp-debug": "*",
     "gulp-util": "*",
     "gulp-load-plugins": "*",
+    "gulp-less":"*",
     "gulp-sass": "*",
     "gulp-uglify": "*",
     "gulp-imagemin": "*",
