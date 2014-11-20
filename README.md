@@ -40,6 +40,9 @@ then insert the css and make it pretty
 - Node.js as a local server to make the application run faster
 - Gulp.js, less, jade. to make things work realtime and the syntax to be clean and faster to write.
 
+##LocalHost
+And point your browser to http://localhost:3000. Optionally, specify a port by supplying the PORT env variable.
+
 ## Browser Support
 
  The latest version of this chat can be downloaded from the browser in standalone form from [here](https://github.com/FatemahManji/NodeWhileYouChat).
