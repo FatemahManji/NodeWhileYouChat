@@ -42,7 +42,7 @@ color = require("ansi-color").set;
 
 
 var nick;
-//var socket = socketio.connect('localhost', { port: 3636 });
+var socket = socketio.connect('localhost', { port: 3000 });
 var rl = readline.createInterface(process.stdin, process.stdout);
 
 
@@ -51,14 +51,15 @@ rl.question("Please enter a nickname: ", function(name) {
     nick = name;
     var msg = nick + " has joined the chat";
     socket.emit('send', { type: 'notice', message: msg });
-    rl.prompt(true);
+    function console_out(msg) {
+    	process.stdout.clearLine();
+    	process.stdout.cursorTo(0);
+    	console.log(msg);
+    	rl.prompt(true);
+    }
 });
 
-function console_out(msg) {
-    process.stdout.clearLine();
-    process.stdout.cursorTo(0);
-    console.log(msg);
-    rl.prompt(true);
-}
+
+
 
 
