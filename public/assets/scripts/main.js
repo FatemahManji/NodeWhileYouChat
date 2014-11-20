@@ -7,13 +7,18 @@ jQuery(function($) {
 
     // Send A Message To The Server
     $('a').on('click', function(){
-      var text = $('input').val();
+      var text = $('input.textMessage').val();
       socket.emit('message', text);
     });
 
     // Recieve Update Event From The Server
     socket.on('update', function(msg){
       $('.messages').append(msg).append('<br>');
+    });
+
+    $('button.setName').on('click', function(){
+      var name = $('input.userNameImput').val();
+      socket.emit('identify', name);
     });
 
 });

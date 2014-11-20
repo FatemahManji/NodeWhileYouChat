@@ -14,7 +14,8 @@ via npm:
 
 ```bash
 $ npm install jade
-$ npm install less 
+$ npm install less
+$ npm install redis 
 ```
 
 ## Run the application
@@ -41,7 +42,7 @@ then insert the css and make it pretty
 - Gulp.js, less, jade. to make things work realtime and the syntax to be clean and faster to write.
 
 ##LocalHost
-And point your browser to http://localhost:3000. Optionally, specify a port by supplying the PORT env variable.
+And point your browser to http://localhost:3000. Optionally, specify a port by supplying the PORT variable.
 
 ## Browser Support
 

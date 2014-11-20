@@ -10,6 +10,7 @@ var less      = require('gulp-less');
 var jade      = require('gulp-jade');
 var imagemin  = require('gulp-sass');
 var rename    = require('gulp-rename');
+var redis     = require('redis');
 
 // ------------------------------------
 // Paths
