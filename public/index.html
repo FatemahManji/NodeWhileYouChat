@@ -13,15 +13,25 @@
       <h1>Node While you Chat - ChatRoom</h1>
     </div>
     <div class="wrapper">
-      <input class="userNameImput">
-      <button class="setName">Name my self</button>
+      <input id="theFieldID" class="userNameImput">
+      <button class="setName">User Name</button>
+      <div class="avatars">
+        <label>
+          <input type="radio" name="face1" value="small" class="radio"><img src="assets/images/face1.png">
+          <input type="radio" name="face2" value="small" class="radio"><img src="assets/images/face2.png">
+          <input type="radio" name="face3" value="small" class="radio"><img src="assets/images/face3.png">
+          <input type="radio" name="face4" value="small" class="radio"><img src="assets/images/face4.png">
+        </label>
+      </div>
       <div class="messages"></div>
       <div class="input">
-        <input id="msg" type="text" class="textMessage"><a href="#">Send a Message</a>
+        <input id="msg" type="text" name="msg" class="textMessage"><a href="#" class="sendButton">Send a Message</a>
       </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.socket.io/socket.io-1.1.0.js"></script>
     <script type="text/javascript" src="assets/scripts/main.js"></script>
+    <!--not working to keep status active on username input  -->
+    <script type="text/javascript">document.theFieldID.focus() script </script>
   </body>
 </html>

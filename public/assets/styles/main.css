@@ -54,6 +54,19 @@ body .wrapper .setName {
 body .wrapper .setName:hover {
   background-color: #6790A5;
 }
+body .wrapper .avatars {
+  margin: 10px;
+  opacity: 0.8;
+}
+body .wrapper .avatars .radio {
+  /* HIDE RADIO */
+  visibility: hidden;
+  margin: 10px;
+  position: absolute;
+}
+body .wrapper .avatars input[type='radio']:checked {
+  opacity: 1;
+}
 body .wrapper .input {
   margin: 0 auto;
   text-align: center;

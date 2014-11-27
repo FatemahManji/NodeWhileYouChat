@@ -21,4 +21,14 @@ jQuery(function($) {
       socket.emit('identify', name);
     });
 
+    // Press enter to send message
+    $('.sendButton').keypress(function (e) {
+      var key = e.which;
+      if (key == 13) {// code for enter key
+        $('a.sendButton').keypress();
+        alert("Enter was pressed was presses");
+        return false;
+      }
+    });
+
 });

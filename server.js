@@ -15,24 +15,13 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
 
-// Handle Socket Connection
-//io.on('connection', function(socket){
-
-  //console.log('A User Connected');
-
-  // Handle Message Event
-  //socket.on('message', function(text){
-    //io.emit('update', text);
-  //});
-
-//});
 
     // socket.io listen for messages
     io.on('connection', function(socket) {  
     	console.log('A User Connected');
       socket.broadcast.emit('update', 'a new user has joined');
 
-      socket.nickname = 'noName';
+      socket.nickname = 'Anonymous User';
       // When a message is received, broadcast it
       // to all users except the originating client
       socket.on('message', function(data) { 
@@ -40,12 +29,6 @@ app.get('/', function(req, res){
         io.emit('update', message);        
       });
 
-      // When a user joins the chat, send a notice
-      // to all users except the originating client
-      // socket.on('join', function(nickname) {
-      // 	console.log('A User nickname');
-      //   // Attach the user's nickname to the socket
-      //   // io.nickname = nickname;
 
       //   // socket.broadcast.emit('notice', nickname + ' has joined the chat.');
       // });
@@ -80,25 +63,6 @@ var path = require('path');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-// var nick;
-// var socket = socketio.connect('localhost', { port: 3000 });
-// var rl = readline.createInterface(process.stdin, process.stdout);
-
-
-// // Set the username
-// rl.question("Please enter a nickname: ", function(name) {
-//     nick = name;
-//     var msg = nick + " has joined the chat";
-//     socket.emit('send', { type: 'notice', message: msg });
-//     function console_out(msg) {
-//     	process.stdout.clearLine();
-//     	process.stdout.cursorTo(0);
-//     	console.log(msg);
-//     	rl.prompt(true);
-//     }
-// });
 
 
 
