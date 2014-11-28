@@ -25,13 +25,13 @@ html
 
       div.avatars
         label
-          input.radio(type="radio" name="face1" value="small")
-          img(src="assets/images/face1.png")
-          input.radio(type="radio" name="face2" value="small")
-          img(src="assets/images/face2.png")
-          input.radio(type="radio" name="face3" value="small")
+          input.radio(type="radio" name="face" value="face1")
+          img(src="assets/images/face1.png" )
+          input.radio(type="radio" name="face" value="face2")
+          img(src="assets/images/face2.png" )
+          input.radio(type="radio" name="face" value="face3")
           img(src="assets/images/face3.png")
-          input.radio(type="radio" name="face4" value="small")
+          input.radio(type="radio" name="face" value="face4")
           img(src="assets/images/face4.png")
 
       div.messages
@@ -46,5 +46,4 @@ html
     script(type="text/javascript", src="https://cdn.socket.io/socket.io-1.1.0.js")
 
     script(type="text/javascript", src="assets/scripts/main.js")
-    //not working to keep status active on username input  
-    script(type="text/javascript") document.theFieldID.focus() script 
+    

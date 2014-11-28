@@ -26,15 +26,19 @@ app.get('/', function(req, res){
       // to all users except the originating client
       socket.on('message', function(data) { 
         var message = socket.nickname + ': ' + data;  
-        io.emit('update', message);        
+        var dataM = {
+          message: message,
+          avatar: socket.avatar
+        };
+
+        io.emit('update', dataM);        
       });
 
 
-      //   // socket.broadcast.emit('notice', nickname + ' has joined the chat.');
-      // });
 
-      socket.on('identify', function(name){
-        socket.nickname = name;
+      socket.on('identify', function(data){
+        socket.nickname = data.name;
+        socket.avatar = data.avatar;
       })
 
       // When a user disconnects, send a notice

@@ -56,16 +56,10 @@ body .wrapper .setName:hover {
 }
 body .wrapper .avatars {
   margin: 10px;
-  opacity: 0.8;
 }
 body .wrapper .avatars .radio {
-  /* HIDE RADIO */
-  visibility: hidden;
-  margin: 10px;
-  position: absolute;
-}
-body .wrapper .avatars input[type='radio']:checked {
-  opacity: 1;
+  width: 25px;
+  height: 25px;
 }
 body .wrapper .input {
   margin: 0 auto;

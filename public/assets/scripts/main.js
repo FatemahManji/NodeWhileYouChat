@@ -2,6 +2,8 @@
 // Wait for DOM to Load
 jQuery(function($) {
 
+    $( "#theFieldID" ).focus();
+
     // Create New Socket Connection using Socket.io
     var socket = io();
 
@@ -12,23 +14,40 @@ jQuery(function($) {
     });
 
     // Recieve Update Event From The Server
-    socket.on('update', function(msg){
-      $('.messages').append(msg).append('<br>');
+    socket.on('update', function(data){
+      //create div with avatar icon
+      var avatar = $('<div>');
+      avatar.css('background-image', 'url(./assets/images/' + data.avatar + '.png)');
+      avatar.css('width', '50px');
+      avatar.css('height', '50px');
+      avatar.css('display', 'inline-block');
+      
+      console.log(avatar);
+
+      $('.messages').append(avatar).append(data.message).append('<br>');
     });
 
     $('button.setName').on('click', function(){
       var name = $('input.userNameImput').val();
-      socket.emit('identify', name);
+
+      var avatar = $('input[name=face]:checked').val();
+
+      console.log(avatar);
+      var data = {
+        name: name,
+        avatar: avatar
+      };
+
+      socket.emit('identify', data);
     });
 
     // Press enter to send message
-    $('.sendButton').keypress(function (e) {
+    $('input.textMessage').keypress(function (e) {
       var key = e.which;
+
       if (key == 13) {// code for enter key
-        $('a.sendButton').keypress();
-        alert("Enter was pressed was presses");
-        return false;
+        var entermsg = $('input.textMessage').val();
+        socket.emit('message', entermsg);
       }
     });
-
 });
